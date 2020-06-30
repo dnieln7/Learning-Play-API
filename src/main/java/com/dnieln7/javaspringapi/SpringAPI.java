@@ -19,8 +19,8 @@ public class SpringAPI {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/users").allowedOrigins("*");
-                registry.addMapping("/login").allowedOrigins("*");
-                registry.addMapping("/sign-up").allowedOrigins("*");
+                registry.addMapping("/users/login").allowedOrigins("*");
+                registry.addMapping("/users/sign-up").allowedOrigins("*");
             }
         };
     }

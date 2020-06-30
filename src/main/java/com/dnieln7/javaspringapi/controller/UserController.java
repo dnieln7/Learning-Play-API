@@ -15,7 +15,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/login")
+    @PostMapping("/users/login")
     public GenericResponse<User> login(@RequestBody Login login) {
         GenericResponse<User> response = new GenericResponse<>();
 
@@ -40,7 +40,7 @@ public class UserController {
         return response;
     }
 
-    @PostMapping("sign-up")
+    @PostMapping("/users/sign-up")
     public GenericResponse<User> signUp(@RequestBody User userIn) {
         GenericResponse<User> response = new GenericResponse<>();
 
@@ -50,16 +50,17 @@ public class UserController {
             response.setCode(0);
             response.setDescription("Email is already registered");
         } else {
-            if (userIn.getRole().equals("ADMIN") || userIn.getRole().equals("STUDENT")) {
+            if (userIn.getRole().equals("TEACHER") || userIn.getRole().equals("STUDENT")) {
                 User user = userRepository.save(userIn);
 
                 response.setCode(1);
                 response.setDescription("Sign Up successful");
                 response.setResult(user);
             }
-
-            response.setCode(1);
-            response.setDescription("Role must be ADMIN or STUDENT");
+            else {
+                response.setCode(1);
+                response.setDescription("Role must be ADMIN or STUDENT");
+            }
         }
 
         return response;
