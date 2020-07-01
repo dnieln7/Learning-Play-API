@@ -1,14 +1,14 @@
-package com.dnieln7.javaspringapi.data.model;
+package com.dnieln7.learningplay.data.model;
 
-public class Login {
+public class Auth {
     private String email;
     private String password;
     private String role;
 
-    public Login() {
+    public Auth() {
     }
 
-    public Login(String email, String password, String role) {
+    public Auth(String email, String password, String role) {
         this.email = email;
         this.password = password;
         this.role = role;

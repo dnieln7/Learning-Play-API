@@ -1,9 +1,9 @@
-package com.dnieln7.javaspringapi.controller;
+package com.dnieln7.learningplay.controller;
 
-import com.dnieln7.javaspringapi.controller.response.GenericResponse;
-import com.dnieln7.javaspringapi.data.model.Login;
-import com.dnieln7.javaspringapi.data.model.User;
-import com.dnieln7.javaspringapi.data.repository.UserRepository;
+import com.dnieln7.learningplay.controller.response.GenericResponse;
+import com.dnieln7.learningplay.data.model.Auth;
+import com.dnieln7.learningplay.data.model.User;
+import com.dnieln7.learningplay.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,15 +16,15 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping("/users/login")
-    public GenericResponse<User> login(@RequestBody Login login) {
+    public GenericResponse<User> login(@RequestBody Auth auth) {
         GenericResponse<User> response = new GenericResponse<>();
 
-        List<User> result = userRepository.findByEmail(login.getEmail());
+        List<User> result = userRepository.findByEmail(auth.getEmail());
 
         if (!result.isEmpty()) {
             User user = result.get(0);
 
-            if (user.getPassword().equals(login.getPassword()) && user.getRole().equals(login.getRole())) {
+            if (user.getPassword().equals(auth.getPassword()) && user.getRole().equals(auth.getRole())) {
                 response.setCode(1);
                 response.setDescription("Login Successful");
                 response.setResult(user);
@@ -72,7 +72,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public User getFormById(@PathVariable int id) {
+    public User getUserById(@PathVariable int id) {
         return userRepository.findById(id).orElse(null);
     }
 }

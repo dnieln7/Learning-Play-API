@@ -14,7 +14,7 @@
     <artifactId>Learning-Play-API</artifactId>
     <version>1.0.0</version>
     <name>Java-Spring-API</name>
-    <description>API for Learning Play Web Page</description>
+    <description>API for the Learning Play Project</description>
 
     <properties>
         <java.version>1.8</java.version>

@@ -1,6 +1,6 @@
-package com.dnieln7.javaspringapi.data.repository;
+package com.dnieln7.learningplay.data.repository;
 
-import com.dnieln7.javaspringapi.data.model.User;
+import com.dnieln7.learningplay.data.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.dnieln7.javaspringapi.data.model;
+package com.dnieln7.learningplay.data.model;
 
 import org.hibernate.annotations.GenericGenerator;
 

@@ -1,4 +1,4 @@
-package com.dnieln7.javaspringapi;
+package com.dnieln7.learningplay;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

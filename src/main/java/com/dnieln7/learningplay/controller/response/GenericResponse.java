@@ -1,4 +1,4 @@
-package com.dnieln7.javaspringapi.controller.response;
+package com.dnieln7.learningplay.controller.response;
 
 /**
  * Helper class to wrap response objects and give extra information.

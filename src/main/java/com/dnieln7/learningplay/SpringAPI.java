@@ -1,4 +1,4 @@
-package com.dnieln7.javaspringapi;
+package com.dnieln7.learningplay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

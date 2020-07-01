@@ -1,6 +1,28 @@
-# Learning Play API
+# Learning Play Front
 
-_API for Learning Play Web Page_
+_API for the Learning Play Project_
+
+## About
+
+Learning Play is a platform to create and evaluate test focused on the primary children
+
+## Endpoints 
+
+1. /users
+
+    * GET - Returns all the registered users.
+
+2. /users/id
+
+    * GET - Returns a user matching a provided id.
+
+3. /users/login
+
+    * POST - Takes an Auth object and returns an User object matching Auth's credentials. 
+
+4. /users/sign-up
+
+    * POST - Takes an User objects and saves it in the database.
 
 ## Built With 🛠️
 
@@ -12,4 +34,4 @@ _API for Learning Play Web Page_
 
 ## Authors ✒️
 
-* **Daniel Antonio** - [dnieln7](https://github.com/dnieln7)
+* **Development** - [dnieln7](https://github.com/dnieln7)
