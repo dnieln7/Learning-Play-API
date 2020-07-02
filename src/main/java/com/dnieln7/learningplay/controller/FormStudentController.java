@@ -27,4 +27,11 @@ public class FormStudentController {
     public FormStudent postForm(@RequestBody FormStudent formStudent) {
         return formStudentRepository.save(formStudent);
     }
+
+    @PutMapping("/food/{id}")
+    public FormStudent putForm(@PathVariable int id, @RequestBody FormStudent formStudent) {
+        formStudent.setId(id);
+
+        return formStudentRepository.save(formStudent);
+    }
 }
