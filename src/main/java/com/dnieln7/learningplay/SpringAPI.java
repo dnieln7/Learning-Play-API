@@ -21,6 +21,8 @@ public class SpringAPI {
                 registry.addMapping("/users").allowedOrigins("*");
                 registry.addMapping("/users/login").allowedOrigins("*");
                 registry.addMapping("/users/sign-up").allowedOrigins("*");
+                registry.addMapping("/forms/teacher").allowedOrigins("*");
+                registry.addMapping("/forms/student").allowedOrigins("*");
             }
         };
     }
