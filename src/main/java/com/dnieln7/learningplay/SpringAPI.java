@@ -22,7 +22,9 @@ public class SpringAPI {
                 registry.addMapping("/users/login").allowedOrigins("*");
                 registry.addMapping("/users/sign-up").allowedOrigins("*");
                 registry.addMapping("/forms/teacher").allowedOrigins("*");
+                registry.addMapping("/forms/teacher/{id}").allowedOrigins("*").allowedMethods("GET", "DELETE");
                 registry.addMapping("/forms/student").allowedOrigins("*");
+                registry.addMapping("/forms/student/{id}").allowedOrigins("*").allowedMethods("GET", "DELETE", "PUT");
             }
         };
     }
