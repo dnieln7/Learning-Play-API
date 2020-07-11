@@ -25,6 +25,8 @@ public class SpringAPI {
                 registry.addMapping("/forms/teacher/{id}").allowedOrigins("*").allowedMethods("GET", "DELETE");
                 registry.addMapping("/forms/student").allowedOrigins("*");
                 registry.addMapping("/forms/student/{id}").allowedOrigins("*").allowedMethods("GET", "DELETE", "PUT");
+                registry.addMapping("/posts").allowedOrigins("*");
+                registry.addMapping("/posts/{id}").allowedOrigins("*").allowedMethods("GET");
             }
         };
     }
