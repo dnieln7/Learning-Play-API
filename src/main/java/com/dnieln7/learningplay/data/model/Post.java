@@ -19,6 +19,9 @@ public class Post {
     private String body;
     private Date date;
 
+    public Post() {
+    }
+
     public Post(int id, User teacher, String title, String body, Date date) {
         this.id = id;
         this.teacher = teacher;

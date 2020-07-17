@@ -11,27 +11,27 @@ import java.util.List;
 public class FormStudentController {
 
     @Autowired
-    private FormStudentRepository formStudentRepository;
+    private FormStudentRepository repository;
 
     @GetMapping("/forms/student")
     public List<FormStudent> getForms() {
-        return (List<FormStudent>) formStudentRepository.findAll();
+        return (List<FormStudent>) repository.findAll();
     }
 
     @GetMapping("/forms/student/{id}")
     public FormStudent getFormById(@PathVariable int id) {
-        return formStudentRepository.findById(id).orElse(null);
+        return repository.findById(id).orElse(null);
     }
 
     @PostMapping("/forms/student")
     public FormStudent postForm(@RequestBody FormStudent formStudent) {
-        return formStudentRepository.save(formStudent);
+        return repository.save(formStudent);
     }
 
     @PutMapping("/forms/student/{id}")
     public FormStudent putForm(@PathVariable int id, @RequestBody FormStudent formStudent) {
         formStudent.setId(id);
 
-        return formStudentRepository.save(formStudent);
+        return repository.save(formStudent);
     }
 }

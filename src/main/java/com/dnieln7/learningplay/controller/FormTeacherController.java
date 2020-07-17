@@ -12,32 +12,32 @@ import java.util.List;
 public class FormTeacherController {
 
     @Autowired
-    private FormTeacherRepository formTeacherRepository;
+    private FormTeacherRepository repository;
 
     @GetMapping("/forms/teacher")
     public List<FormTeacher> getForms() {
-        return (List<FormTeacher>) formTeacherRepository.findAll();
+        return (List<FormTeacher>) repository.findAll();
     }
 
     @GetMapping("/forms/teacher/{id}")
     public FormTeacher getFormById(@PathVariable int id) {
-        return formTeacherRepository.findById(id).orElse(null);
+        return repository.findById(id).orElse(null);
     }
 
     @PostMapping("/forms/teacher")
     public FormTeacher postForm(@RequestBody FormTeacher formTeacher) {
-        return formTeacherRepository.save(formTeacher);
+        return repository.save(formTeacher);
     }
 
     @DeleteMapping("/forms/teacher/{id}")
     public DeleteResponse deleteForm(@PathVariable int id) {
-        FormTeacher formTeacher = formTeacherRepository.findById(id).orElse(null);
+        FormTeacher formTeacher = repository.findById(id).orElse(null);
 
         if (formTeacher == null) {
             return new DeleteResponse(1, "Not found!");
         }
 
-        formTeacherRepository.delete(formTeacher);
+        repository.delete(formTeacher);
 
         return new DeleteResponse(1, "Deleted!");
     }
